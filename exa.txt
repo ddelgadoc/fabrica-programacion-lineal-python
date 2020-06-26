@@ -1,0 +1,119 @@
+\* Fabrica de helado *\
+Maximize
+OBJ: 50.05 Cantidad_Potes_de_helado_G_CH + 50.05 Cantidad_Potes_de_helado_G_F
+ + 50.05 Cantidad_Potes_de_helado_G_V
+ + 52.05 Cantidad_Potes_de_helado_G_Valmendra
+ + 25.75 Cantidad_Potes_de_helado_M_CH + 25.75 Cantidad_Potes_de_helado_M_F
+ + 25.75 Cantidad_Potes_de_helado_M_V
+ + 28.65 Cantidad_Potes_de_helado_M_Valmendra
+ + 14 Cantidad_Potes_de_helado_P_CH + 14 Cantidad_Potes_de_helado_P_F
+ + 14 Cantidad_Potes_de_helado_P_V + 17.5 Cantidad_Potes_de_helado_P_Valmendra
+ - 500 Cantidad_de_neveras_adquirir
+Subject To
+_C1: Cantidad_Potes_de_helado_P_CH + Cantidad_Potes_de_helado_P_F
+ + Cantidad_Potes_de_helado_P_V + Cantidad_Potes_de_helado_P_Valmendra <= 5000
+_C10: 1.2 Cantidad_Potes_de_helado_G_CH + 1.2 Cantidad_Potes_de_helado_G_F
+ + 1.2 Cantidad_Potes_de_helado_G_V + 1.2 Cantidad_Potes_de_helado_G_Valmendra
+ + 0.9 Cantidad_Potes_de_helado_M_CH + 0.9 Cantidad_Potes_de_helado_M_F
+ + 0.9 Cantidad_Potes_de_helado_M_V + 0.9 Cantidad_Potes_de_helado_M_Valmendra
+ + 0.5 Cantidad_Potes_de_helado_P_CH + 0.5 Cantidad_Potes_de_helado_P_F
+ + 0.5 Cantidad_Potes_de_helado_P_V + 0.5 Cantidad_Potes_de_helado_P_Valmendra
+ <= 15000
+_C11: Utilizar_maquina_1 + Utilizar_maquina_2 = 1
+_C12: Cantidad_Potes_de_helado_P_CH + Cantidad_Potes_de_helado_P_F
+ + Cantidad_Potes_de_helado_P_V + Cantidad_Potes_de_helado_P_Valmendra
+ - 7500 Utilizar_maquina_1 - 6000 Utilizar_maquina_2 <= 0
+_C13: - 5000 Utilizar_maquina_1 - 5110 Utilizar_maquina_2 <= 0
+_C14: - 4000 Utilizar_maquina_1 - 3500 Utilizar_maquina_2 <= 0
+_C15: - 7500 Utilizar_maquina_1 - 6000 Utilizar_maquina_2 <= 0
+_C16: Cantidad_Potes_de_helado_M_CH + Cantidad_Potes_de_helado_M_F
+ + Cantidad_Potes_de_helado_M_V + Cantidad_Potes_de_helado_M_Valmendra
+ - 5000 Utilizar_maquina_1 - 5110 Utilizar_maquina_2 <= 0
+_C17: - 4000 Utilizar_maquina_1 - 3500 Utilizar_maquina_2 <= 0
+_C18: - 7500 Utilizar_maquina_1 - 6000 Utilizar_maquina_2 <= 0
+_C19: - 5000 Utilizar_maquina_1 - 5110 Utilizar_maquina_2 <= 0
+_C2: Cantidad_Potes_de_helado_M_CH + Cantidad_Potes_de_helado_M_F
+ + Cantidad_Potes_de_helado_M_V + Cantidad_Potes_de_helado_M_Valmendra <= 2000
+_C20: Cantidad_Potes_de_helado_G_CH + Cantidad_Potes_de_helado_G_F
+ + Cantidad_Potes_de_helado_G_V + Cantidad_Potes_de_helado_G_Valmendra
+ - 4000 Utilizar_maquina_1 - 3500 Utilizar_maquina_2 <= 0
+_C21: Cantidad_Potes_de_helado_G_Valmendra
+ + 0.7 Cantidad_Potes_de_helado_M_Valmendra
+ + 0.5 Cantidad_Potes_de_helado_P_Valmendra
+ - 50000 Usar_nuevo_sabor_vainilla_almendra <= 0
+_C3: Cantidad_Potes_de_helado_G_CH + Cantidad_Potes_de_helado_G_F
+ + Cantidad_Potes_de_helado_G_V + Cantidad_Potes_de_helado_G_Valmendra <= 3000
+_C4: 0.00025 Cantidad_Potes_de_helado_G_CH
+ + 0.00025 Cantidad_Potes_de_helado_G_F + 0.00025 Cantidad_Potes_de_helado_G_V
+ + 0.00025 Cantidad_Potes_de_helado_G_Valmendra
+ + 0.0002 Cantidad_Potes_de_helado_M_CH + 0.0002 Cantidad_Potes_de_helado_M_F
+ + 0.0002 Cantidad_Potes_de_helado_M_V
+ + 0.0002 Cantidad_Potes_de_helado_M_Valmendra
+ + 0.000142857142857 Cantidad_Potes_de_helado_P_CH
+ + 0.000142857142857 Cantidad_Potes_de_helado_P_F
+ + 0.000142857142857 Cantidad_Potes_de_helado_P_V
+ + 0.000142857142857 Cantidad_Potes_de_helado_P_Valmendra
+ - Cantidad_de_neveras_adquirir <= 1
+_C5: Cantidad_de_neveras_adquirir - 4 Realizar_ajustes_economicos <= 0
+_C6: Cantidad_Potes_de_helado_G_CH - 3 Cantidad_Potes_de_helado_G_F
+ - 3 Cantidad_Potes_de_helado_G_V - 3 Cantidad_Potes_de_helado_G_Valmendra
+ + Cantidad_Potes_de_helado_M_CH - 3 Cantidad_Potes_de_helado_M_F
+ - 3 Cantidad_Potes_de_helado_M_V - 3 Cantidad_Potes_de_helado_M_Valmendra
+ + Cantidad_Potes_de_helado_P_CH - 3 Cantidad_Potes_de_helado_P_F
+ - 3 Cantidad_Potes_de_helado_P_V - 3 Cantidad_Potes_de_helado_P_Valmendra
+ >= 0
+_C7: 3 Cantidad_Potes_de_helado_G_CH + 3 Cantidad_Potes_de_helado_G_F
+ + 3 Cantidad_Potes_de_helado_G_V + 3 Cantidad_Potes_de_helado_G_Valmendra
+ + 2.5 Cantidad_Potes_de_helado_M_CH + 2.5 Cantidad_Potes_de_helado_M_F
+ + 2.5 Cantidad_Potes_de_helado_M_V + 2.5 Cantidad_Potes_de_helado_M_Valmendra
+ + 1.5 Cantidad_Potes_de_helado_P_CH + 1.5 Cantidad_Potes_de_helado_P_F
+ + 1.5 Cantidad_Potes_de_helado_P_V + 1.5 Cantidad_Potes_de_helado_P_Valmendra
+ <= 50000
+_C8: 2.3 Cantidad_Potes_de_helado_G_CH + 2.3 Cantidad_Potes_de_helado_G_F
+ + 2.3 Cantidad_Potes_de_helado_G_V + 2.3 Cantidad_Potes_de_helado_G_Valmendra
+ + 1.8 Cantidad_Potes_de_helado_M_CH + 1.8 Cantidad_Potes_de_helado_M_F
+ + 1.8 Cantidad_Potes_de_helado_M_V + 1.8 Cantidad_Potes_de_helado_M_Valmendra
+ + 0.8 Cantidad_Potes_de_helado_P_CH + 0.8 Cantidad_Potes_de_helado_P_F
+ + 0.8 Cantidad_Potes_de_helado_P_V + 0.8 Cantidad_Potes_de_helado_P_Valmendra
+ <= 20000
+_C9: 2.7 Cantidad_Potes_de_helado_G_CH + 2.7 Cantidad_Potes_de_helado_G_F
+ + 2.7 Cantidad_Potes_de_helado_G_V + 2.7 Cantidad_Potes_de_helado_G_Valmendra
+ + 2 Cantidad_Potes_de_helado_M_CH + 2 Cantidad_Potes_de_helado_M_F
+ + 2 Cantidad_Potes_de_helado_M_V + 2 Cantidad_Potes_de_helado_M_Valmendra
+ + 1.7 Cantidad_Potes_de_helado_P_CH + 1.7 Cantidad_Potes_de_helado_P_F
+ + 1.7 Cantidad_Potes_de_helado_P_V + 1.7 Cantidad_Potes_de_helado_P_Valmendra
+ <= 25000
+Bounds
+0 <= Cantidad_Potes_de_helado_G_CH
+0 <= Cantidad_Potes_de_helado_G_F
+0 <= Cantidad_Potes_de_helado_G_V
+0 <= Cantidad_Potes_de_helado_G_Valmendra
+0 <= Cantidad_Potes_de_helado_M_CH
+0 <= Cantidad_Potes_de_helado_M_F
+0 <= Cantidad_Potes_de_helado_M_V
+0 <= Cantidad_Potes_de_helado_M_Valmendra
+0 <= Cantidad_Potes_de_helado_P_CH
+0 <= Cantidad_Potes_de_helado_P_F
+0 <= Cantidad_Potes_de_helado_P_V
+0 <= Cantidad_Potes_de_helado_P_Valmendra
+0 <= Cantidad_de_neveras_adquirir
+Generals
+Cantidad_Potes_de_helado_G_CH
+Cantidad_Potes_de_helado_G_F
+Cantidad_Potes_de_helado_G_V
+Cantidad_Potes_de_helado_G_Valmendra
+Cantidad_Potes_de_helado_M_CH
+Cantidad_Potes_de_helado_M_F
+Cantidad_Potes_de_helado_M_V
+Cantidad_Potes_de_helado_M_Valmendra
+Cantidad_Potes_de_helado_P_CH
+Cantidad_Potes_de_helado_P_F
+Cantidad_Potes_de_helado_P_V
+Cantidad_Potes_de_helado_P_Valmendra
+Cantidad_de_neveras_adquirir
+Binaries
+Realizar_ajustes_economicos
+Usar_nuevo_sabor_vainilla_almendra
+Utilizar_maquina_1
+Utilizar_maquina_2
+End
